@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Apte - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 15px;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav li {
+            margin: 0 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        section {
+            background: white;
+            margin: 40px auto;
+            padding: 60px 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #764ba2;
+            margin: 10px auto;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .education {
+            margin-top: 30px;
+        }
+
+        .edu-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .edu-item h3 {
+            color: #764ba2;
+            margin-bottom: 5px;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .experience-item h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .company {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .experience-item li {
+            margin-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .skill-card i {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .skill-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .skill-card p {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-top: 4px solid #667eea;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Siddharth (Sid) Apte</h1>
+            <p>Computer Science Graduate Student | AI/ML Engineer</p>
+            <p><i class="fas fa-map-marker-alt"></i> Bloomington, IN | <i class="fas fa-envelope"></i> sidapte.02@gmail.com | <i class="fas fa-phone"></i> 346-287-3156</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm a Master's student in Computer Science at Indiana University Bloomington with a strong passion for artificial intelligence and machine learning. My expertise lies in developing intelligent systems, from agentic retrieval systems to computer vision applications. I've worked with leading companies like Mercuria Energy America and Bharat Forge, where I've applied cutting-edge AI technologies to solve real-world problems.</p>
+                <p>With a solid foundation in both research and practical development, I've co-authored multiple peer-reviewed papers and built production-ready systems that have significantly improved operational efficiency. I'm always excited to tackle new challenges in AI/ML and cloud computing.</p>
+            </div>
+            
+            <div class="education">
+                <div class="edu-item">
+                    <h3>Master of Science in Computer Science</h3>
+                    <p><strong>Indiana University, Bloomington, IN</strong> | May 2026 | GPA: 3.67/4.00</p>
+                    <p><em>Relevant Coursework: Applied Machine Learning, Cloud Computing, Applications of LLMs</em></p>
+                </div>
+                <div class="edu-item">
+                    <h3>Bachelor of Technology in Computer Science and Engineering</h3>
+                    <p><strong>MIT World Peace University, Pune, India</strong> | May 2024 | GPA: 9.38/10.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Software Developer Intern</h3>
+                <p class="company">Mercuria Energy America, LLC. | Houston, TX | May 2025 – August 2025</p>
+                <ul>
+                    <li>Developed agentic retrieval systems using Langraph and Amazon Bedrock agents to enhance RAG pipelines over OpenSearch, improving analyst's lookup time from 2 minutes to 20 seconds</li>
+                    <li>Deployed workflows using AWS serverless stack (Lambda, DynamoDB, S3), containerized apps with Docker and automated deployments to EC2 using GitLab CI/CD</li>
+                    <li>Integrated Dash and Plotly components for analytical insights, presented solution to CIO for rollout across multiple trade desks</li>
+                    <li>Collaborated in an Agile development team, contributing to sprint cycles and production deployments</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Project Intern</h3>
+                <p class="company">Bharat Forge Ltd. | Pune, India | January 2024 – June 2024</p>
+                <ul>
+                    <li>Constructed annotated dataset of over 3,000 aircraft engine fan-blade images, collaborating with domain experts to identify 12 common manufacturing defects using CVAT</li>
+                    <li>Fine-tuned Mask R-CNN (Detectron 2), achieving AP score of 40.693 and AP50 score of 59.485</li>
+                    <li>Reduced manual quality check time from 20 minutes to 5 minutes through automated imaging system implementation</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>AI/ML Intern</h3>
+                <p class="company">Truecopy Credentials Pvt. Ltd. | Pune, India | June 2023 – January 2024</p>
+                <ul>
+                    <li>Built Named Entity Recognition model using SpaCy, identifying domain-specific entities with F1 score of 0.92</li>
+                    <li>Implemented RESTful API workflows using FastAPI, integrating with AWS Textract and Google Document AI for OCR-based document parsing</li>
+                    <li>Delivered fully functional proof of concept application, resulting in 50+ beta client signups</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <p>Python</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-java"></i>
+                    <p>Java</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                    <p>C++</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                    <p>C</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                    <p>PyTorch</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                    <p>TensorFlow</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-aws"></i>
+                    <p>AWS</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-google"></i>
+                    <p>Google Cloud</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-docker"></i>
+                    <p>Docker</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                    <p>Kubernetes</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-git-alt"></i>
+                    <p>Git</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
+                    <p>Django</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">
+                    <p>Flask</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV">
+                    <p>OpenCV</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                    <p>NumPy</p>
+                </div>
+                <div class="skill-card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                    <p>Pandas</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Vaani: Audio Diarization & Transcription System</h3>
+                    <p>Led development of a Python-based system for multi-speaker diarization and transcription using OpenAI's Whisper model for speech-to-text conversion and Llama 7B for automated summarization and question answering. Deployed on Gradio for interactive real-time access.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Metro Vigil: Video Monitoring System</h3>
+                    <p>Fine-tuned Mask R-CNN to detect train tracks and passenger warning lines from live video feeds. Developed monitoring solution using OpenCV and YOLOv7 to detect metro track violations. Won 1st place among 500+ participants in Pune Metro Rail Corp Hackathon.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Research Publications</h3>
+                    <p>Co-authored four peer-reviewed research papers in Natural Language Processing and Computer Vision, published in IEEE and Springer-indexed journals. Contributed to advancing the field through rigorous research and experimentation.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Siddharth Apte. All rights reserved.</p>
+            <p>Built with passion for AI and Machine Learning</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
